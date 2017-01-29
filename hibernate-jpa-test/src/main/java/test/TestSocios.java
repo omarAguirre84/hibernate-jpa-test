@@ -37,6 +37,7 @@ public class TestSocios {
 	public static void main(String[] args) {
 		em = emf.createEntityManager();
 		em.getTransaction().begin();
+
 		insertInicial();
 		//e.setNombre("David");
 		//e.setApellidos("lopez");
