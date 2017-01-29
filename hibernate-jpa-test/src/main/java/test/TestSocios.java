@@ -10,7 +10,6 @@ import javax.persistence.Persistence;
 import ar.omar.hibernate.modelo.Socio;
 
 public class TestSocios {
-	
 	//@PersistenceContext(unitName ="Persistencia")
 	private static EntityManager em;
 	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("Persistencia");;
@@ -34,20 +33,20 @@ public class TestSocios {
 		for (Socio soc : socios) {
 			System.out.println(soc.toString());
 		}
-	}//x
+	}
 	public static void main(String[] args) {
 		em = emf.createEntityManager();
 		insertInicial();
 		
 		em.getTransaction().begin();
-		Socio e = em.find(Socio.class, 10);
-		e.setNombre("David");
-		e.setApellidos("lopez");
+		Socio e = em.find(Socio.class, 1);
+		em.remove(e);
+		//e.setNombre("David");
+		//e.setApellidos("lopez");
 		
 		em.getTransaction().commit();
 		
 		imprimirTodo();
 		em.close();
-		
 	}
 }
