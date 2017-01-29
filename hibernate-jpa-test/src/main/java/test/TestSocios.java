@@ -19,10 +19,10 @@ public class TestSocios {
 		Socio s2 = new Socio("Martinez", "Jose", 31012550L, new GregorianCalendar(1984, 10, 10).getTime());
 		
 		
-		em.getTransaction().begin();
+		//em.getTransaction().begin();
 		em.persist(s);
 		em.persist(s2);
-		em.getTransaction().commit();
+		//em.getTransaction().commit();
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -36,11 +36,8 @@ public class TestSocios {
 	}
 	public static void main(String[] args) {
 		em = emf.createEntityManager();
-		insertInicial();
-		
 		em.getTransaction().begin();
-		Socio e = em.find(Socio.class, 1);
-		em.remove(e);
+		insertInicial();
 		//e.setNombre("David");
 		//e.setApellidos("lopez");
 		
