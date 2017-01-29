@@ -40,6 +40,7 @@ public class TestSocios {
 		insertInicial();
 		//e.setNombre("David");
 		//e.setApellidos("lopez");
+		//e.setApellidos("lopez");
 		
 		em.getTransaction().commit();
 		
